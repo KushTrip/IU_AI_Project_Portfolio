@@ -1,6 +1,9 @@
 from newsapi import NewsApiClient
 import pandas as pd
+import streamlit as st  # <--- Import Streamlit so we can use its caching tool!
 
+# Add the cache shield!
+@st.cache_data(ttl=3600) #  This saves the API result in memory for 3600 seconds (1 hour).
 def get_company_news(company_name: str, api_key: str):
     """
     Fetches news for a given company with defensive error handling.
