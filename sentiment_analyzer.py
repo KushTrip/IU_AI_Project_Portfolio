@@ -1,5 +1,6 @@
 from transformers import pipeline
 import pandas as pd
+import streamlit as st  # <--- Import Streamlit so we can use its caching tool!
 
 # Load a BERT model specifically trained on financial news to detect Positive, Neutral, or Negative sentiment!
 print("Downloading and loading AI model into memory... (This takes a few seconds on the first run)")
@@ -25,6 +26,8 @@ def analyze_text(text: str) -> dict:
         print(f"Error analyzing text: {error}")
         return {'sentiment': 'Error', 'confidence': 0.0}
 
+# Add the cache shield!
+@st.cache_data(ttl=3600) #  This saves the API result in memory for 3600 seconds (1 hour).
 def analyze_news_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Takes a clean Pandas Dataframe from news_fetcher, runs BERT sentiment analysis on each article, 
