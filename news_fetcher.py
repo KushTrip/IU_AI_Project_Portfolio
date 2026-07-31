@@ -51,6 +51,6 @@ def get_company_news(company_name: str, api_key: str):
 
 # Test our function with a sample company name
 if __name__ == "__main__":
-    test_table = get_company_news("Microsoft") 
+    test_table = get_company_news("Microsoft", api_key="MY_API_KEY") 
     print("\n--- FUNCTION TEST WITH MICROSOFT ---")
     print(test_table.head())

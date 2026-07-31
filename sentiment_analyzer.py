@@ -60,7 +60,7 @@ if __name__ == "__main__":
     # We import our Extractor module directly into our Brain module to test them together!
     from news_fetcher import get_company_news
 
-    TEST_API_KEY = "d92869d6b57b4b93af51994a0bb887c2"
+    TEST_API_KEY = "MY_API_KEY"
     test_company = "Nvidia"
     print(f"\n1. Fetching live news for {test_company}...")
     raw_news_table = get_company_news(test_company, api_key=TEST_API_KEY)
