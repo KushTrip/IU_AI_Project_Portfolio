@@ -24,7 +24,7 @@ This project is built using a three-tier modular architecture:
 
 **1. Clone the repository**
 ```
-git clone [https://github.com/KushTrip/IU_AI_Project_Portfolio.git](https://github.com/KushTrip/IU_AI_Project_Portfolio.git)
+git clone https://github.com/KushTrip/IU_AI_Project_Portfolio.git
 cd IU_AI_Project_Portfolio
 ```
 https://github.com/KushTrip/IU_AI_Project_Portfolio.git
