@@ -1,4 +1,4 @@
-from transformers import pipeline
+from transformers import pipeline # import the Hugging Face Transformers library so we can use their pre-trained BERT models
 import pandas as pd
 import streamlit as st  # <--- Import Streamlit so we can use its caching tool!
 
@@ -19,8 +19,8 @@ def analyze_text(text: str) -> dict:
         confidence = round(prediction['score'], 4)
 
         return {
-            'sentiment': label,
-            'confidence': confidence
+            'sentiment': label, # Return the sentiment label (Positive, Neutral, Negative)
+            'confidence': confidence # Return the confidence score (0.0 to 1.0)
         }
     except Exception as error:
         print(f"Error analyzing text: {error}")
@@ -39,8 +39,8 @@ def analyze_news_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
     print(f"Running BERT AI analysis on {len(df)} articles...")
 
-    sentiments = []
-    confidences = []
+    sentiments = [] # Create an empty list to hold the sentiment results
+    confidences = [] # Create an empty list to hold the confidence scores
 
     # Loop through every article's full_text in the table
     for text in df['full_text']:

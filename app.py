@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly.express as px # import Plotly Express for interactive visualizations like Pie/donut Charts
 
 # import our custom backend modules
 from news_fetcher import get_company_news
 from sentiment_analyzer import analyze_news_dataframe
 
-#1. Configure browser tab title and layout width
+#1. Configure the title of the browser tab and layout width
 st.set_page_config(page_title="AI News Sentiment Analyzer", layout="wide")
 
-st.title("Corporate News Sentiment Dashboard")
+st.title("Sentiment analysis from news articles") # big title at the top of the web app
 st.write("An interactive AI pipeline powered by Hugging Face BERT and NewsAPI.")
 
 #2. Sidebar for secure API Key input (type="password" hides the input)
@@ -17,7 +17,7 @@ st.sidebar.header("Authentication")
 api_key = st.sidebar.text_input("Enter your NewsAPI Key:", type="password")
 
 #3. Main Dashboard input box
-company_name = st.text_input("Enter a company name to analyze its news sentiment:", value="Tesla")
+company_name = st.text_input("Enter a company name to analyze its news sentiment:", value="Tesla") # default value is Tesla
 
 #4. Action button to trigger analysis
 if st.button("Analyze News"):
@@ -42,7 +42,7 @@ if st.button("Analyze News"):
                 # Step D: Display the table on the web dashboard!
                 st.subheader(f"Latest News & AI Sentiment for: {company_name}")
 
-                # Count the sentiment distribution
+                # Count the sentiment distribution: no. of positive, neutral, and negative articles
                 counts = analyzed_news_df['sentiment'].value_counts()
                 total_articles = len(analyzed_news_df)
 
@@ -86,7 +86,7 @@ if st.button("Analyze News"):
                         names='Sentiment', 
                         color='Sentiment',
                         color_discrete_map=custom_colors,
-                        hole=0.35  # A 35% hole creates a sleek professional Donut Chart!
+                        hole=0.35  # Creates a donut chart with a hole in the middle
                     )
                     
                     # 4. Force explicit percentage AND category labels inside the pie slices

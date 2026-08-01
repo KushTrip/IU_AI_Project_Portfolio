@@ -1,5 +1,5 @@
-from newsapi import NewsApiClient
-import pandas as pd
+from newsapi import NewsApiClient # import the NewsAPI client so we can fetch news articles
+import pandas as pd # import Pandas to create a clean table of news articles
 import streamlit as st  # <--- Import Streamlit so we can use its caching tool!
 
 # Add the cache shield!
@@ -12,7 +12,7 @@ def get_company_news(company_name: str, api_key: str):
 
         # it searches for whatever 'company_name' is passed to it!
         newsapi = NewsApiClient(api_key=api_key)
-        response = newsapi.get_everything(q=company_name, language='en')
+        response = newsapi.get_everything(q=company_name, language='en') # NewsAPI Searches their database for our query (q=company_name) and filters for English articles only.
 
         # --- DIAMOND 1: Network / Status Check ---
         if response.get('status') != 'ok':
@@ -24,7 +24,7 @@ def get_company_news(company_name: str, api_key: str):
             print(f"No articles found for: {company_name}")
             return pd.DataFrame()  # Return an empty DataFrame if no articles are found
 
-        # create an empty list before the loop starts
+        # create an empty list before the loop starts to hold our cleaned articles
         cleaned_articles = []
 
         for article in response['articles']:
