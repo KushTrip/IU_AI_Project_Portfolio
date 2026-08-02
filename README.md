@@ -9,7 +9,7 @@ Designed as a portfolio project for the B.Sc. Data Science curriculum, this appl
 This project is built using a three-tier modular architecture:
 
 1. **The Extractor (`news_fetcher.py`):** Integrates with [NewsAPI](https://newsapi.org/) to ingest live, global headlines and article descriptions based on corporate keyword queries. Built with defensive dictionary parsing and error handling to ensure pipeline stability.
-2. **The NLP Brain (`sentiment_analyzer.py`):** Utilizes the `mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis` model via [Hugging Face Transformers](https://huggingface.co/). This specialized RoBERTa neural network evaluates financial context and classifies articles across three mandatory valence levels: **Positive, Neutral, and Negative**.
+2. **The NLP Brain (`sentiment_analyzer.py`):** Utilizes the `mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis` model via [Hugging Face Transformers](https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis). This specialized RoBERTa neural network evaluates financial context and classifies articles across three mandatory valence levels: **Positive, Neutral, and Negative**.
 3. **The Executive Dashboard (`app.py`):** A [Streamlit](https://streamlit.io/) graphical user interface (GUI) featuring interactive metric KPI cards, data caching for API rate-limit protection, and custom [Plotly](https://plotly.com/) donut charts for executive-level visual analytics.
 
 ## Key Features
