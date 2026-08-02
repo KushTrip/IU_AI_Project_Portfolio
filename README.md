@@ -24,9 +24,10 @@ This project is built using a three-tier modular architecture:
 
 **1. Clone the repository**
 ```
-git clone [https://github.com/YOUR_GITHUB_USERNAME/IU_AI_Project_Portfolio.git](https://github.com/YOUR_GITHUB_USERNAME/IU_AI_Project_Portfolio.git)
+git clone https://github.com/KushTrip/IU_AI_Project_Portfolio.git
 cd IU_AI_Project_Portfolio
 ```
+https://github.com/KushTrip/IU_AI_Project_Portfolio.git
 
 **2. Create and activate a virtual environment**
 ```
@@ -55,4 +56,3 @@ streamlit run app.py
 
 ## License & Academic Integrity
 This project was developed for academic evaluation. The AI model utilized is open-source via Hugging Face. Do not use this application for actual financial trading or automated investment decisions.
-
